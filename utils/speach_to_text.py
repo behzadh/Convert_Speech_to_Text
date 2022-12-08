@@ -5,10 +5,10 @@ from pydub.silence import split_on_silence
 import webbrowser as wb
 
 class SpeechtoText:
-    def __init__(self) -> None:
+    def __init__(self, speech_duration = 5) -> None:
         self.recog = sr.Recognizer()
         self.path = '/Users/behzad/My_codings/Convert_Speech_to_Text/raw_data/speech_long.wav'
-        self.speech_duration = 5 #seconds
+        self.speech_duration = speech_duration #seconds
 
     def convert_speech(self):
         '''
@@ -70,5 +70,5 @@ class SpeechtoText:
         return text
 
 if __name__ == '__main__':
-    speach = SpeechtoText()
+    speach = SpeechtoText(6)
     speach.live_speech_to_text()
